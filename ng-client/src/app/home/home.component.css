@@ -1,0 +1,35 @@
+.titlebox {
+    margin: 0px auto;
+    margin-top: 180px;
+    width: auto;
+    text-align: center;
+}
+
+.titlesubbox {
+    display: inline-block;
+    text-align: left;
+    margin: 0px 15px;
+    vertical-align: top;
+}
+
+.buttonbox {
+    margin: 40px auto;
+    width: auto;
+    text-align: center;
+}
+
+.button {
+    background-color: #77f;
+    display: inline-block;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 30px;
+    padding: 80px 120px;
+    margin: 6px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #66d;
+    box-shadow: inset 0px 0px 9px #226;
+}
