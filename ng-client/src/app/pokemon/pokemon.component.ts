@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IRootObject, PokeapiService } from '../services/pokeapi.service';
+import { IListRootObject, PokeapiService } from '../services/pokeapi.service';
 
 @Component({
   selector: 'app-pokemon',
@@ -10,7 +10,7 @@ import { IRootObject, PokeapiService } from '../services/pokeapi.service';
 
 export class PokemonComponent {
 
-  pokedata : IRootObject;
+  pokedata : IListRootObject;
 
   pagenum : number;
   limit = 20;
