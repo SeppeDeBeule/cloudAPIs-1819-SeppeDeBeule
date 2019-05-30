@@ -9,11 +9,28 @@ import { IRootObject, Result, PokeapiService } from '../services/pokeapi.service
 
 export class PokemonComponent implements OnInit {
 
-  pokemon : Result[];
+  pokedata : IRootObject;
+  pagenum = 1;
   constructor(private _service:PokeapiService) { }
 
+  getPokemon(Url: string) {
+    this._service.getPokemon(Url).subscribe(pokemonlist => this.pokedata = pokemonlist);
+  
+    var pagecount = Math.floor(this.pokedata.count / 20);
+  }
+
   ngOnInit() {
-    this._service.getPokemon().subscribe(pokemonlist => this.pokemon = pokemonlist.results);
+    this.getPokemon("https://pokeapi.co/api/v2/pokemon");
+  }
+
+  next() {
+    this.pagenum++;
+    this.getPokemon(this.pokedata.next);
+  }
+
+  prev() {
+    this.pagenum--;
+    this.getPokemon(this.pokedata.previous);
   }
 
 }

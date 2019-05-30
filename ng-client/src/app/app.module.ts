@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
+import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NotfoundComponent,
-    PokemonComponent
+    PokemonComponent,
+    PokemonDetailComponent
   ],
   imports: [
     HttpClientModule,

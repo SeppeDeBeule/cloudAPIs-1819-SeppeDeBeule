@@ -10,8 +10,12 @@ export class PokeapiService {
 
   constructor(private _http: HttpClient) { }
 
-  getPokemon(): Observable<IRootObject> {
-    return this._http.get<IRootObject>("https://pokeapi.co/api/v2/pokemon");
+  getPokemon(url: string): Observable<IRootObject> {
+    return this._http.get<IRootObject>(url);
+  }
+
+  getPokemonDetail(url: string): Observable<IRootObject> {
+    return this._http.get<IRootObject>(url);
   }
 
   pokemonInfo: IRootObject;
