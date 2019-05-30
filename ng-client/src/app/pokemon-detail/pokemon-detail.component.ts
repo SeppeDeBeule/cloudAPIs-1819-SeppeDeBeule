@@ -10,6 +10,7 @@ export class PokemonDetailComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

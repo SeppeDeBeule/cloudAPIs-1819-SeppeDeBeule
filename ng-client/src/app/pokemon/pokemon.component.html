@@ -1,29 +1,27 @@
 <div class="homebutton">
-  <a routerLink="/home" routerLInkActive="active">
+  <a routerLink="/home" routerLinkActive="active">
     <button class="btn btn-primary" style="padding-left: 20px;">
       Back to homepage
     </button>
   </a>
 </div>
 
-<div class="page">
+<div class="page" *ngIf="pokedata">
   <h1>Browse all pokemon</h1>
 
-  <p>
+  <p >
     A total of {{pokedata.count}} Pokemon were found.<br>
-    Viewing page {{pagenum}} out of {{pagecount}}
+    Viewing page {{pagenum}} out of {{getPageCount()}}
   </p>
 
-  <button class="btn btn-primary" [disabled]="!pokedata.previous" (click)="prev()">Previous</button>
-  <button class="btn btn-primary" [disabled]="!pokedata.next" (click)="next()">Next</button>
+  <button class="btn btn-primary" [disabled]="!pokedata.previous" routerLink="{{getPrev()}}">Previous</button>
+  <button class="btn btn-primary" [disabled]="!pokedata.next" routerLink="{{getNext()}}">Next</button>
 
   <table width="100%">
     <tr *ngFor="let pokemon of pokedata.results">
-      <td>{{pokemon.name}}</td>
+      <td width="40%">{{pokemon.name}}</td>
       <td>
-        <a routerLink="/" routerLinkActive="active">
-          <button class="btn btn-primary">View details</button>
-        </a>
+        <button class="btn btn-primary" routerLink="/viewpokemon/{{pokemon.name}}">View details</button>
       </td>
     </tr>
   </table>

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { IRootObject, Result, PokeapiService } from '../services/pokeapi.service';
+import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { IRootObject, PokeapiService } from '../services/pokeapi.service';
 
 @Component({
   selector: 'app-pokemon',
@@ -7,30 +8,36 @@ import { IRootObject, Result, PokeapiService } from '../services/pokeapi.service
   styleUrls: ['./pokemon.component.css']
 })
 
-export class PokemonComponent implements OnInit {
+export class PokemonComponent {
 
   pokedata : IRootObject;
-  pagenum = 1;
-  constructor(private _service:PokeapiService) { }
+
+  pagenum : number;
+  limit = 20;
+  offset : number;
+
+  constructor(private _service:PokeapiService, private route: ActivatedRoute) { 
+    route.params.subscribe(val => {
+      this.pagenum = parseInt(this.route.snapshot.paramMap.get('page'));
+      this.offset = this.limit * (this.pagenum - 1);
+      this.getPokemon(`https://pokeapi.co/api/v2/pokemon/?offset=${this.offset}&limit=${this.limit}`);
+    });
+  }
 
   getPokemon(Url: string) {
     this._service.getPokemon(Url).subscribe(pokemonlist => this.pokedata = pokemonlist);
+  }
+
+  getPageCount() {
+    return Math.ceil(this.pokedata.count / 20);
+  }
   
-    var pagecount = Math.floor(this.pokedata.count / 20);
+  getNext() {
+    return `/pokemon/${this.pagenum + 1}`;
+    
   }
 
-  ngOnInit() {
-    this.getPokemon("https://pokeapi.co/api/v2/pokemon");
+  getPrev() {
+    return `/pokemon/${this.pagenum - 1}`;
   }
-
-  next() {
-    this.pagenum++;
-    this.getPokemon(this.pokedata.next);
-  }
-
-  prev() {
-    this.pagenum--;
-    this.getPokemon(this.pokedata.previous);
-  }
-
 }
