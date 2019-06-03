@@ -14,7 +14,7 @@ export class CountriesComponent implements OnInit {
   constructor(private _service:CountryapiService) { }
 
   ngOnInit() {
-    this.getCountries(`http://localhost:56364/api/v1/countries`);
+    this.getCountries(`https://restapi-dot-prime-sign-240906.appspot.com/api/v1/countries`);
   }
 
   getCountries(Url: string) {
