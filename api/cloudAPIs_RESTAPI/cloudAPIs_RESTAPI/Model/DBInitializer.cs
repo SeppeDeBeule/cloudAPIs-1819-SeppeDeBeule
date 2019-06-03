@@ -14,7 +14,27 @@ namespace cloudAPIs_RESTAPI.Model
             
             if (!context.Countries.Any())
             {
-                // What do if no countries are present
+                var country1 = new Country()
+                {
+                    Name = "Belgium",
+                    ISO = "be",
+                    Capital = "Brussels",
+                    Surface_area = 30688,
+                    Population = 11420163
+                };
+
+                var country2 = new Country()
+                {
+                    Name = "The Netherlands",
+                    ISO = "nl",
+                    Capital = "Amsterdam",
+                    Surface_area = 41543,
+                    Population = 17308133
+                };
+
+                context.Countries.Add(country1);
+                context.Countries.Add(country2);
+                context.SaveChanges();
             }
         }
     }

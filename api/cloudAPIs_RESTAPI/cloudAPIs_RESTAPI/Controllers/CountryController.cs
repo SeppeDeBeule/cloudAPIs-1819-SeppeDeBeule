@@ -8,36 +8,55 @@ namespace cloudAPIs_RESTAPI.Controllers
     [Route("api/v1/countries")]
     public class CountryController : ControllerBase
     {
-        static List<Country> list = new List<Country>();
-
-        static CountryController()
+        public LibraryContext context { get; set; }
+        public CountryController(LibraryContext _context)
         {
-            list.Add(new Country()
-            {
-                Id = 1,
-                Name = "Belgium",
-                ISO = "be",
-                Capital = "Brussels",
-                Surface_area = 30688,
-                Population = 11420163
-            });
-
-            list.Add(new Country()
-            {
-                Id = 2,
-                Name = "The Netherlands",
-                ISO = "nl",
-                Capital = "Amsterdam",
-                Surface_area = 41543,
-                Population = 17308133
-            });
+            context = _context;
         }
 
         // List all countries
         [HttpGet]
-        public List<Country> GetCountries()
+        public List<Country> GetCountries(string name, string capital, int? page, string sort, int limit = 20, string dir = "asc")
         {
-            return list;
+            IQueryable<Country> query = context.Countries;
+
+            if (!string.IsNullOrWhiteSpace(name)) { query = query.Where(d => d.Name == name); }
+            if (!string.IsNullOrWhiteSpace(capital)) { query = query.Where(d => d.Capital == capital); }
+
+            if(!string.IsNullOrWhiteSpace(sort))
+            {
+                switch (sort)
+                {
+                    case "name":
+                        if (dir == "asc") { query = query.OrderBy(d => d.Name); }
+                        else if (dir == "desc") { query = query.OrderByDescending(d => d.Name); }
+                        break;
+                    case "capital":
+                        if (dir == "asc") { query = query.OrderBy(d => d.Capital); }
+                        else if (dir == "desc") { query = query.OrderByDescending(d => d.Capital); }
+                        break;
+                    case "iso":
+                        if (dir == "asc") { query = query.OrderBy(d => d.ISO); }
+                        else if (dir == "desc") { query = query.OrderByDescending(d => d.ISO); }
+                        break;
+                    case "surface_area":
+                        if (dir == "asc") { query = query.OrderBy(d => d.Surface_area); }
+                        else if (dir == "desc") { query = query.OrderByDescending(d => d.Surface_area); }
+                        break;
+                    case "population":
+                        if (dir == "asc") { query = query.OrderBy(d => d.Population); }
+                        else if (dir == "desc") { query = query.OrderByDescending(d => d.Population); }
+                        break;
+                }
+            }
+
+            if(page.HasValue)
+            {
+                query = query.Skip((page.Value - 1) * limit);
+            }
+            query = query.Take(limit);
+
+            return query.ToList();
         }
 
         // Retrieve a country with given ID
@@ -45,10 +64,14 @@ namespace cloudAPIs_RESTAPI.Controllers
         [HttpGet]
         public ActionResult<Country> GetCountry(int id)
         {
-            if (list.Exists(country => country.Id == id))
-                return list.First(country => country.Id == id);
-            else
+            var country = context.Countries.Find(id);
+            if (country == null)
+            {
                 return NotFound();
+            } else
+            {
+                return Ok(country);
+            }
         }
 
         // Delete a country with given ID
@@ -56,29 +79,46 @@ namespace cloudAPIs_RESTAPI.Controllers
         [HttpDelete]
         public IActionResult DeleteCountry(int id)
         {
-            if (list.Exists(country => country.Id == id))
+            var country = context.Countries.Find(id);
+            if (country == null) { return NotFound(); }
+            else
             {
-                var country = list.First(i => i.Id == id);
-                list.Remove(country);
+                context.Countries.Remove(country);
+                context.SaveChanges();
+
                 return NoContent();
             }
-            else
-                // Country with given ID was not found
-                return NotFound();
         }
-
 
         // Add a new country (assign ID automatically)
         [HttpPost]
-        public ActionResult<Country> AddCountry([FromBody]Country country)
+        public ActionResult<Country> AddCountry([FromBody]Country newCountry)
         {
-            
-            var max = list.Max(i => i.Id);
-            country.Id = max + 1;
-            list.Add(country);
-            
+            context.Countries.Add(newCountry);
+            context.SaveChanges();
+            return Created("", newCountry);
+        }
 
-            return Created("", country);
+        // Update an existing country given its ID
+        [HttpPut]
+        public IActionResult UpdateCountry([FromBody] Country updateCountry)
+        {
+            var orgCountry = context.Countries.Find(updateCountry.Id);
+            if(orgCountry == null)
+            {
+                return NotFound();
+            } else
+            {
+                // Put new values in
+                orgCountry.Name = updateCountry.Name;
+                orgCountry.Capital = updateCountry.Capital;
+                orgCountry.ISO = updateCountry.ISO;
+                orgCountry.Surface_area = updateCountry.Surface_area;
+                orgCountry.Population = updateCountry.Population;
+
+                context.SaveChanges();
+                return Ok(orgCountry);
+            }
         }
     }
 }

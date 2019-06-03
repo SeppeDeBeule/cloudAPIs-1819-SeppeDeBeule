@@ -1,0 +1,6 @@
+C:\Users\Seppe\Documents\Artesis Plantijn\Cloud APIs\cloudAPIs-1819-SeppeDeBeule\api\cloudAPIs_RESTAPI\cloudAPIs_RESTAPI\obj\Debug\netcoreapp2.1\cloudAPIs_RESTAPI.csprojAssemblyReference.cache
+C:\Users\Seppe\Documents\Artesis Plantijn\Cloud APIs\cloudAPIs-1819-SeppeDeBeule\api\cloudAPIs_RESTAPI\cloudAPIs_RESTAPI\obj\Debug\netcoreapp2.1\cloudAPIs_RESTAPI.csproj.CoreCompileInputs.cache
+C:\Users\Seppe\Documents\Artesis Plantijn\Cloud APIs\cloudAPIs-1819-SeppeDeBeule\api\cloudAPIs_RESTAPI\cloudAPIs_RESTAPI\obj\Debug\netcoreapp2.1\cloudAPIs_RESTAPI.RazorAssemblyInfo.cache
+C:\Users\Seppe\Documents\Artesis Plantijn\Cloud APIs\cloudAPIs-1819-SeppeDeBeule\api\cloudAPIs_RESTAPI\cloudAPIs_RESTAPI\obj\Debug\netcoreapp2.1\cloudAPIs_RESTAPI.RazorAssemblyInfo.cs
+C:\Users\Seppe\Documents\Artesis Plantijn\Cloud APIs\cloudAPIs-1819-SeppeDeBeule\api\cloudAPIs_RESTAPI\cloudAPIs_RESTAPI\obj\Debug\netcoreapp2.1\cloudAPIs_RESTAPI.AssemblyInfoInputs.cache
+C:\Users\Seppe\Documents\Artesis Plantijn\Cloud APIs\cloudAPIs-1819-SeppeDeBeule\api\cloudAPIs_RESTAPI\cloudAPIs_RESTAPI\obj\Debug\netcoreapp2.1\cloudAPIs_RESTAPI.AssemblyInfo.cs
