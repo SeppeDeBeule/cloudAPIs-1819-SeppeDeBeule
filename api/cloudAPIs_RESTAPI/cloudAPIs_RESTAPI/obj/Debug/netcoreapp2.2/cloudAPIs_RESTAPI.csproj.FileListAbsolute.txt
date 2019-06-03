@@ -1,0 +1,14 @@
+C:\Users\sdbeul\Documents\Cloud APIs\cloudAPIs-1819-SeppeDeBeule\api\cloudAPIs_RESTAPI\cloudAPIs_RESTAPI\bin\Debug\netcoreapp2.2\cloudAPIs_RESTAPI.deps.json
+C:\Users\sdbeul\Documents\Cloud APIs\cloudAPIs-1819-SeppeDeBeule\api\cloudAPIs_RESTAPI\cloudAPIs_RESTAPI\bin\Debug\netcoreapp2.2\cloudAPIs_RESTAPI.runtimeconfig.json
+C:\Users\sdbeul\Documents\Cloud APIs\cloudAPIs-1819-SeppeDeBeule\api\cloudAPIs_RESTAPI\cloudAPIs_RESTAPI\bin\Debug\netcoreapp2.2\cloudAPIs_RESTAPI.runtimeconfig.dev.json
+C:\Users\sdbeul\Documents\Cloud APIs\cloudAPIs-1819-SeppeDeBeule\api\cloudAPIs_RESTAPI\cloudAPIs_RESTAPI\bin\Debug\netcoreapp2.2\cloudAPIs_RESTAPI.dll
+C:\Users\sdbeul\Documents\Cloud APIs\cloudAPIs-1819-SeppeDeBeule\api\cloudAPIs_RESTAPI\cloudAPIs_RESTAPI\bin\Debug\netcoreapp2.2\cloudAPIs_RESTAPI.pdb
+C:\Users\sdbeul\Documents\Cloud APIs\cloudAPIs-1819-SeppeDeBeule\api\cloudAPIs_RESTAPI\cloudAPIs_RESTAPI\obj\Debug\netcoreapp2.2\cloudAPIs_RESTAPI.csprojAssemblyReference.cache
+C:\Users\sdbeul\Documents\Cloud APIs\cloudAPIs-1819-SeppeDeBeule\api\cloudAPIs_RESTAPI\cloudAPIs_RESTAPI\obj\Debug\netcoreapp2.2\cloudAPIs_RESTAPI.csproj.CoreCompileInputs.cache
+C:\Users\sdbeul\Documents\Cloud APIs\cloudAPIs-1819-SeppeDeBeule\api\cloudAPIs_RESTAPI\cloudAPIs_RESTAPI\obj\Debug\netcoreapp2.2\cloudAPIs_RESTAPI.RazorAssemblyInfo.cache
+C:\Users\sdbeul\Documents\Cloud APIs\cloudAPIs-1819-SeppeDeBeule\api\cloudAPIs_RESTAPI\cloudAPIs_RESTAPI\obj\Debug\netcoreapp2.2\cloudAPIs_RESTAPI.RazorAssemblyInfo.cs
+C:\Users\sdbeul\Documents\Cloud APIs\cloudAPIs-1819-SeppeDeBeule\api\cloudAPIs_RESTAPI\cloudAPIs_RESTAPI\obj\Debug\netcoreapp2.2\cloudAPIs_RESTAPI.AssemblyInfoInputs.cache
+C:\Users\sdbeul\Documents\Cloud APIs\cloudAPIs-1819-SeppeDeBeule\api\cloudAPIs_RESTAPI\cloudAPIs_RESTAPI\obj\Debug\netcoreapp2.2\cloudAPIs_RESTAPI.AssemblyInfo.cs
+C:\Users\sdbeul\Documents\Cloud APIs\cloudAPIs-1819-SeppeDeBeule\api\cloudAPIs_RESTAPI\cloudAPIs_RESTAPI\obj\Debug\netcoreapp2.2\cloudAPIs_RESTAPI.RazorTargetAssemblyInfo.cache
+C:\Users\sdbeul\Documents\Cloud APIs\cloudAPIs-1819-SeppeDeBeule\api\cloudAPIs_RESTAPI\cloudAPIs_RESTAPI\obj\Debug\netcoreapp2.2\cloudAPIs_RESTAPI.dll
+C:\Users\sdbeul\Documents\Cloud APIs\cloudAPIs-1819-SeppeDeBeule\api\cloudAPIs_RESTAPI\cloudAPIs_RESTAPI\obj\Debug\netcoreapp2.2\cloudAPIs_RESTAPI.pdb

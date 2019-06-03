@@ -6,6 +6,32 @@
   </a>
 </div>
 
-<div class="page">
+<div class="page" *ngIf="pokedetail">
   <h1>Viewing detailed information about <b>{{name}}</b></h1>
+  <img style="float:left; margin:8px;" src="{{pokedetail.sprites.front_default}}">
+  
+  <div class="box-basestats">
+    Height: <span style='font-size:32px;'>{{pokedetail.height}}</span>
+  </div>
+  <div class="box-basestats">
+    Weight: <span style='font-size:32px;'>{{pokedetail.weight}}</span>
+  </div>
+  <br><br>
+  <div class="page-left">
+    <b>Abilities:</b>
+    <ul>
+      <li *ngFor="let _ability of pokedetail.abilities">
+        {{_ability.ability.name}}
+      </li>
+    </ul>
+  </div>
+  <div class="page-right">
+    <b>Stats:</b>
+    <div class="statsbar" *ngFor="let _stat of pokedetail.stats">
+      <div class="statsbar-fill" [ngStyle]="{'width.%': _stat.base_stat}">
+        &nbsp;&nbsp;{{_stat.stat.name}}:
+        {{_stat.base_stat}}
+      </div>
+    </div>
+  </div>
 </div>

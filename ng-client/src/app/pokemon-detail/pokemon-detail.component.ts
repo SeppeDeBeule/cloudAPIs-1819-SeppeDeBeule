@@ -17,10 +17,10 @@ export class PokemonDetailComponent implements OnInit {
   
   ngOnInit() {
     this.name = this.route.snapshot.paramMap.get('name');
+    this.getPokemon(`https://pokeapi.co/api/v2/pokemon/${this.name}`);
   }
 
   getPokemon(Url: string) {
     this._service.getPokemonDetail(Url).subscribe(pokemondetail => this.pokedetail = pokemondetail)
   }
-
 }
